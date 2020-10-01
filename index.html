@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' gap:; style-src 'self' 'unsafe-inline'; media-src *" />
+
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>Calcular Média</title>
+</head>
+
+<body>
+    <h3>Calcular Média</h3>
+    <form name="med" method="post" action="">
+        <table class="tabela1">
+            <tr>
+                <td>
+                    <p>Nota 1:</p>
+                </td>
+                <Td><input type="number" class="campo" name="nota1" value=""></Td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Nota 2:</p>
+                </td>
+                <Td><input type="number" class="campo" name="nota2" value=""></Td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Nota 3:</p>
+                </td>
+                <Td><input type="number" class="campo" name="nota3" value=""></Td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Nota 4:</p>
+                </td>
+                <Td><input type="number" class="campo" name="nota4" value=""></Td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p>Escolha as atividades: </p>
+                </td>
+                <Td><input type="checkbox" name="trab" value="trabalho">Trabalhos<br>
+                    <input type="checkbox" name="lista" value="lista">Lista<br>
+                    <input type="checkbox" name="prova" value="prova" checked>Prova<br>
+                    <input type="checkbox" name="sem" value="seminario">Seminario<br>
+
+                </Td>
+            </tr>
+
+        </table>
+
+        <table class="tabela2">
+            <tr>
+                <td><input type="text" class="res" name="resultado" value=""></td>
+            </tr>
+        </table>
+        <input type="button" class="botao1" name="Calcular" value="Calcular" onclick="calcularmedia()">
+    </form>
+    <script type="text/javascript">
+        function calcularmedia() {
+            var nota1, nota2, nota3, nota4, media, trab, sem, lista, prova;
+
+            //recebendo valores da caixa de texto   
+            nota1 = parseFloat(document.med.nota1.value);
+            nota2 = parseFloat(document.med.nota2.value);
+            nota3 = parseFloat(document.med.nota3.value);
+            nota4 = parseFloat(document.med.nota4.value);
+
+            media = (nota1 + nota2 + nota3 + nota4) / 4;
+            //verifica qual checkbox esta selecionado e soma um valor na media
+            if (document.med.prova.checked) {
+                media += 0.1;
+            }
+            if (document.med.trab.checked) {
+                media += 0.2;
+            }
+            if (document.med.lista.checked) {
+                media += 0.3;
+            }
+            if (document.med.sem.checked) {
+                media += 0.4;
+            }
+
+            //verifica a media se o aluino esta aprovado
+            if (media >= 7) {
+                //mostra a mensagem na caixa
+                document.med.resultado.value = 'Sua média é ' + media + ', Aprovado';
+            } else if ((media >= 4) && (media < 7)) {
+                //mostra a mensagem na caixa
+                document.med.resultado.value = 'Sua média é ' + media + ', Exame';
+            } else {
+                //mostra a mensagem na caixa
+                document.med.resultado.value = 'Sua média é ' + media + ', Reprovado';
+            }
+
+        }
+    </script>
+</body>
+
+</html>

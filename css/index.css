@@ -1,0 +1,73 @@
+body {
+    background: linear-gradient(0.25turn, #a9dde9, #a5a5a579, #dd4d4d);
+    justify-content: center;
+    justify-items: center;
+    display: flex;
+}
+
+h3 {
+    top: -20px;
+    position: relative;
+    font-size: 22pt;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 10px rgb(0, 30, 255);
+}
+
+form {
+    top: 70px;
+    position: absolute;
+    box-shadow: 1px 2px 5px rgb(0, 0, 0);
+    min-height: 75vh;
+    max-width: 90vw;
+    padding: 10px;
+}
+
+.tabela1 input {
+    float: left;
+}
+
+table.tabela2 {
+    justify-content: center;
+    justify-items: center;
+    display: flex;
+}
+
+p {
+    font-size: 20px;
+    font-weight: bolder;
+    color: rgb(28, 25, 41);
+    text-shadow: 1px 2px 5px rgb(255, 255, 255)
+}
+
+.res {
+    font-size: 15px;
+    font-weight: bolder;
+    width: 300px;
+    height: 30px;
+    color: rgba(0, 31, 133, 0.686);
+}
+
+input.campo {
+    width: 200px;
+    height: 30px;
+}
+
+.botao1 {
+    margin-top: 10px;
+    margin-left: 70px;
+    margin-right: 50px;
+    width: 200px;
+    height: 40px;
+    font-weight: bolder;
+    border: none;
+    color: rgb(255, 255, 255);
+    background-color: rgb(25, 0, 255);
+    border-radius: 50px;
+}
+
+.botao1:hover {
+    background-color: aqua;
+    color: black;
+    font-weight: bolder;
+}
